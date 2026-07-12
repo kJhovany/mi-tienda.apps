@@ -1,1 +1,17 @@
-{"antiFeatures":{},"apksigner":"/home/kev/Android/Sdk/build-tools/35.0.0/apksigner","archivePolicy0":[],"commandLine":["/home/kev/fdroidserver-245-env/bin/fdroid update","--verbose"],"disabled":[],"endTimestamp":1783829483276,"failedBuilds":{},"jarsigner":"/usr/lib/jvm/java-26-openjdk/bin/jarsigner","keytool":"/usr/lib/jvm/java-26-openjdk/bin/keytool","needsUpdate":["appinventor.ai_florpaezvanessa555.CloudDBChatApp_BlocksFixed"],"noPackages":["appinventor.ai_florpaezvanessa555.CloudDBChatApp_BlocksFixed"],"noUpdateCheck":["appinventor.ai_florpaezvanessa555.CloudDBChatApp_BlocksFixed"],"stages":{"delete_disabled_builds":1783829475132,"index.make repo":1783829475141,"prepare_apps repo":1783829475138,"process_apks":1783829475133,"read_added_date_from_all_apks":1783829475137,"remove_apks":1783829475136,"scan_repo_files":1783829475134},"startTimestamp":1783851075000,"subcommand":"update"}
+{
+  "commandLine": [
+    "/home/kev/fdroidserver-245-env/bin/fdroid update",
+    "--verbose"
+  ],
+  "stages": {
+    "delete_disabled_builds": 1783831317244,
+    "index.make repo": 1783831317254,
+    "prepare_apps repo": 1783831317251,
+    "process_apks": 1783831317245,
+    "read_added_date_from_all_apks": 1783831317250,
+    "remove_apks": 1783831317249,
+    "scan_repo_files": 1783831317247
+  },
+  "startTimestamp": 1783852917000,
+  "subcommand": "update"
+}
