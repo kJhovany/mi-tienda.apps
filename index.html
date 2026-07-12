@@ -10,23 +10,22 @@
 
     <meta
         name="description"
-        content="Repositorio de aplicaciones Android Mi Tienda Apps"
+        content="Repositorio de aplicaciones Android"
     >
 
-    <title>Mi Tienda Apps | Repositorio F-Droid</title>
+    <title>Mi Tienda Apps</title>
 
     <style>
         :root {
-            --color-principal: #1976d2;
-            --color-secundario: #0d47a1;
-            --color-acento: #42a5f5;
-            --color-fondo: #f4f7fb;
-            --color-texto: #1f2937;
-            --color-texto-claro: #6b7280;
-            --color-blanco: #ffffff;
-            --color-exito: #198754;
-            --sombra: 0 10px 30px rgba(0, 0, 0, 0.10);
-            --radio: 18px;
+            --principal: #1976d2;
+            --principal-oscuro: #0d47a1;
+            --fondo: #f4f7fb;
+            --blanco: #ffffff;
+            --texto: #1f2937;
+            --texto-claro: #64748b;
+            --verde: #198754;
+            --borde: #dbe5f1;
+            --sombra: 0 10px 30px rgba(15, 23, 42, 0.10);
         }
 
         * {
@@ -42,15 +41,14 @@
         body {
             min-height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
-            color: var(--color-texto);
-            background:
-                radial-gradient(
-                    circle at top left,
-                    rgba(66, 165, 245, 0.20),
-                    transparent 35%
-                ),
-                var(--color-fondo);
+            color: var(--texto);
+            background: var(--fondo);
             line-height: 1.6;
+        }
+
+        button,
+        input {
+            font: inherit;
         }
 
         a {
@@ -58,18 +56,18 @@
         }
 
         header {
+            color: var(--blanco);
             background: linear-gradient(
                 135deg,
-                var(--color-secundario),
-                var(--color-principal)
+                var(--principal-oscuro),
+                var(--principal)
             );
-            color: var(--color-blanco);
-            padding: 20px 5%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 22px 5%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.16);
         }
 
-        .barra-navegacion {
-            width: min(1100px, 100%);
+        .barra {
+            width: min(1150px, 100%);
             margin: auto;
             display: flex;
             align-items: center;
@@ -80,83 +78,85 @@
         .marca {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
-        .marca img {
-            width: 52px;
-            height: 52px;
-            object-fit: cover;
-            border-radius: 12px;
-            background: var(--color-blanco);
-            padding: 5px;
+        .logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            border-radius: 14px;
+            background: var(--blanco);
+            padding: 6px;
         }
 
         .marca h1 {
-            font-size: 1.35rem;
+            font-size: 1.5rem;
         }
 
         .marca p {
-            font-size: 0.85rem;
             opacity: 0.85;
-        }
-
-        .enlace-menu {
-            color: var(--color-blanco);
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            border-radius: 10px;
-            padding: 9px 16px;
-            transition: 0.25s;
-        }
-
-        .enlace-menu:hover {
-            background: var(--color-blanco);
-            color: var(--color-secundario);
+            font-size: 0.9rem;
         }
 
         main {
-            width: min(1100px, 90%);
+            width: min(1150px, 92%);
             margin: auto;
         }
 
-        .inicio {
-            min-height: 70vh;
-            padding: 70px 0 50px;
+        .presentacion {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             align-items: center;
-            gap: 45px;
+            gap: 35px;
+            padding: 65px 0;
         }
 
-        .contenido-inicio h2 {
-            max-width: 750px;
-            font-size: clamp(2.1rem, 5vw, 4rem);
-            line-height: 1.1;
-            color: var(--color-secundario);
-            margin-bottom: 22px;
+        .presentacion h2 {
+            color: var(--principal-oscuro);
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.08;
+            margin-bottom: 20px;
         }
 
-        .contenido-inicio p {
+        .presentacion p {
             max-width: 700px;
+            color: var(--texto-claro);
             font-size: 1.08rem;
-            color: var(--color-texto-claro);
-            margin-bottom: 30px;
         }
 
-        .botones {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
+        .panel-repositorio {
+            background: var(--blanco);
+            border: 1px solid var(--borde);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: var(--sombra);
+        }
+
+        .panel-repositorio h3 {
+            color: var(--principal-oscuro);
+            margin-bottom: 10px;
+        }
+
+        .direccion {
+            margin: 16px 0;
+            padding: 14px;
+            border: 1px solid #bdd5f3;
+            border-radius: 10px;
+            color: var(--principal-oscuro);
+            background: #eef6ff;
+            overflow-wrap: anywhere;
+            font-family: monospace;
         }
 
         .boton {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            min-height: 44px;
             border: none;
-            border-radius: 12px;
-            padding: 14px 22px;
-            font-size: 1rem;
+            border-radius: 11px;
+            padding: 11px 18px;
             font-weight: bold;
             cursor: pointer;
             transition:
@@ -167,149 +167,187 @@
 
         .boton:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.14);
         }
 
         .boton-principal {
-            color: var(--color-blanco);
-            background: var(--color-principal);
+            color: var(--blanco);
+            background: var(--principal);
         }
 
         .boton-principal:hover {
-            background: var(--color-secundario);
+            background: var(--principal-oscuro);
         }
 
-        .boton-secundario {
-            color: var(--color-principal);
-            background: var(--color-blanco);
-            border: 2px solid var(--color-principal);
-        }
-
-        .tarjeta-repositorio {
-            background: var(--color-blanco);
-            border-radius: var(--radio);
-            padding: 30px;
-            box-shadow: var(--sombra);
-            border: 1px solid rgba(25, 118, 210, 0.12);
-        }
-
-        .tarjeta-repositorio h3 {
-            color: var(--color-secundario);
-            margin-bottom: 15px;
-        }
-
-        .url-repositorio {
-            overflow-wrap: anywhere;
-            background: #eef5ff;
-            color: var(--color-secundario);
-            border: 1px solid #c7ddfa;
-            border-radius: 10px;
-            padding: 15px;
-            font-family: monospace;
-            margin: 15px 0;
-        }
-
-        .mensaje {
-            min-height: 25px;
+        .mensaje-copia {
+            min-height: 24px;
             margin-top: 12px;
-            color: var(--color-exito);
+            color: var(--verde);
             font-weight: bold;
         }
 
-        .seccion {
-            padding: 65px 0;
+        .seccion-aplicaciones {
+            padding: 25px 0 75px;
         }
 
-        .titulo-seccion {
-            text-align: center;
-            color: var(--color-secundario);
+        .encabezado-aplicaciones {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .encabezado-aplicaciones h2 {
+            color: var(--principal-oscuro);
             font-size: 2rem;
-            margin-bottom: 35px;
         }
 
-        .pasos {
+        .contador {
+            color: var(--texto-claro);
+        }
+
+        .buscador {
+            width: min(420px, 100%);
+            border: 1px solid var(--borde);
+            border-radius: 12px;
+            background: var(--blanco);
+            padding: 13px 16px;
+            outline: none;
+        }
+
+        .buscador:focus {
+            border-color: var(--principal);
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.12);
+        }
+
+        .estado {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: var(--blanco);
+            border: 1px solid var(--borde);
+            border-radius: 16px;
+            padding: 35px;
+            color: var(--texto-claro);
+        }
+
+        .lista-aplicaciones {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+            gap: 23px;
         }
 
-        .paso {
-            background: var(--color-blanco);
-            border-radius: var(--radio);
-            padding: 28px;
+        .aplicacion {
+            display: flex;
+            flex-direction: column;
+            background: var(--blanco);
+            border: 1px solid var(--borde);
+            border-radius: 18px;
+            padding: 23px;
             box-shadow: var(--sombra);
-            transition: transform 0.25s;
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
         }
 
-        .paso:hover {
+        .aplicacion:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.14);
         }
 
-        .numero {
-            width: 45px;
-            height: 45px;
+        .cabecera-aplicacion {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .icono-aplicacion {
+            width: 75px;
+            height: 75px;
+            flex-shrink: 0;
+            object-fit: contain;
+            border: 1px solid var(--borde);
+            border-radius: 17px;
+            background: #f8fafc;
+            padding: 5px;
+        }
+
+        .icono-alternativo {
+            width: 75px;
+            height: 75px;
+            flex-shrink: 0;
             display: grid;
             place-items: center;
-            border-radius: 50%;
-            background: var(--color-principal);
-            color: var(--color-blanco);
+            border-radius: 17px;
+            color: var(--blanco);
+            background: var(--principal);
+            font-size: 2rem;
             font-weight: bold;
+        }
+
+        .nombre-aplicacion {
+            color: var(--principal-oscuro);
+            font-size: 1.25rem;
+            line-height: 1.25;
+        }
+
+        .paquete {
+            color: var(--texto-claro);
+            font-size: 0.78rem;
+            overflow-wrap: anywhere;
+        }
+
+        .resumen {
+            flex-grow: 1;
+            color: var(--texto-claro);
             margin-bottom: 18px;
         }
 
-        .paso h3 {
-            color: var(--color-secundario);
-            margin-bottom: 10px;
+        .datos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            margin-bottom: 18px;
         }
 
-        .aviso {
-            margin: 20px 0 70px;
-            background: #fff8e1;
-            border-left: 5px solid #f9a825;
-            border-radius: 12px;
-            padding: 20px;
+        .dato {
+            background: #f5f8fc;
+            border-radius: 10px;
+            padding: 9px;
+            font-size: 0.85rem;
+        }
+
+        .dato strong {
+            display: block;
+            color: var(--principal-oscuro);
+        }
+
+        .descargar {
+            width: 100%;
         }
 
         footer {
             text-align: center;
+            color: var(--blanco);
             background: #102a43;
-            color: var(--color-blanco);
             padding: 25px 15px;
         }
 
-        footer p {
-            opacity: 0.85;
-        }
-
         @media (max-width: 800px) {
-            .inicio {
+            .presentacion {
                 grid-template-columns: 1fr;
-                padding-top: 50px;
+                padding: 45px 0;
             }
 
-            .pasos {
-                grid-template-columns: 1fr;
+            .encabezado-aplicaciones {
+                align-items: stretch;
+                flex-direction: column;
             }
 
-            .barra-navegacion {
-                align-items: flex-start;
-            }
-
-            .enlace-menu {
-                display: none;
-            }
-
-            .contenido-inicio {
-                text-align: center;
-            }
-
-            .contenido-inicio p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .botones {
-                justify-content: center;
+            .buscador {
+                width: 100%;
             }
         }
     </style>
@@ -318,11 +356,12 @@
 <body>
 
     <header>
-        <nav class="barra-navegacion">
+        <div class="barra">
             <div class="marca">
                 <img
+                    class="logo"
                     src="repo/icons/icon.png"
-                    alt="Icono de Mi Tienda Apps"
+                    alt="Logo del repositorio"
                     onerror="this.style.display='none'"
                 >
 
@@ -331,141 +370,115 @@
                     <p>Repositorio de aplicaciones Android</p>
                 </div>
             </div>
-
-            <a class="enlace-menu" href="#instrucciones">
-                Cómo instalar
-            </a>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <section class="inicio">
-            <div class="contenido-inicio">
-                <h2>Descarga aplicaciones desde nuestro repositorio</h2>
+        <section class="presentacion">
+            <div>
+                <h2>Descarga nuestras aplicaciones</h2>
 
                 <p>
-                    Mi Tienda Apps es un repositorio para distribuir
-                    aplicaciones Android mediante F-Droid de manera sencilla,
-                    rápida y organizada.
+                    Consulta las aplicaciones disponibles en nuestro
+                    repositorio F-Droid y descarga la versión más reciente
+                    de cada APK.
                 </p>
-
-                <div class="botones">
-                    <a
-                        class="boton boton-principal"
-                        href="repo/"
-                    >
-                        Ver repositorio
-                    </a>
-
-                    <button
-                        class="boton boton-secundario"
-                        type="button"
-                        onclick="copiarRepositorio()"
-                    >
-                        Copiar dirección
-                    </button>
-                </div>
             </div>
 
-            <div class="tarjeta-repositorio">
+            <div class="panel-repositorio">
                 <h3>Dirección del repositorio</h3>
 
                 <p>
-                    Copia esta dirección y agrégala en la aplicación F-Droid:
+                    Agrega esta dirección dentro de la aplicación F-Droid:
                 </p>
 
-                <div
-                    class="url-repositorio"
-                    id="direccionRepositorio"
-                >
-                    https://jhovas1112.github.io/mi-tienda.apps/repo/
-                </div>
+                <div class="direccion" id="direccionRepositorio"></div>
 
                 <button
                     class="boton boton-principal"
                     type="button"
                     onclick="copiarRepositorio()"
                 >
-                    Copiar enlace
+                    Copiar dirección
                 </button>
 
                 <p
-                    class="mensaje"
+                    class="mensaje-copia"
                     id="mensajeCopia"
                     aria-live="polite"
                 ></p>
             </div>
         </section>
 
-        <section class="seccion" id="instrucciones">
-            <h2 class="titulo-seccion">
-                ¿Cómo agregar el repositorio?
-            </h2>
+        <section class="seccion-aplicaciones">
+            <div class="encabezado-aplicaciones">
+                <div>
+                    <h2>Aplicaciones disponibles</h2>
 
-            <div class="pasos">
-                <article class="paso">
-                    <div class="numero">1</div>
-
-                    <h3>Instala F-Droid</h3>
-
-                    <p>
-                        Descarga e instala la aplicación oficial de F-Droid
-                        en tu teléfono Android.
+                    <p class="contador" id="contadorAplicaciones">
+                        Cargando aplicaciones...
                     </p>
-                </article>
+                </div>
 
-                <article class="paso">
-                    <div class="numero">2</div>
+                <input
+                    class="buscador"
+                    id="buscador"
+                    type="search"
+                    placeholder="Buscar una aplicación..."
+                    aria-label="Buscar una aplicación"
+                >
+            </div>
 
-                    <h3>Abre Repositorios</h3>
-
-                    <p>
-                        En F-Droid entra en Configuración, selecciona
-                        Repositorios y presiona el botón para agregar uno.
-                    </p>
-                </article>
-
-                <article class="paso">
-                    <div class="numero">3</div>
-
-                    <h3>Pega la dirección</h3>
-
-                    <p>
-                        Pega la dirección de este repositorio, guárdala
-                        y espera a que F-Droid actualice la lista de aplicaciones.
-                    </p>
-                </article>
+            <div
+                class="lista-aplicaciones"
+                id="listaAplicaciones"
+            >
+                <div class="estado">
+                    Leyendo el índice del repositorio…
+                </div>
             </div>
         </section>
-
-        <div class="aviso">
-            <strong>Importante:</strong>
-            después de subir o actualizar una aplicación APK, debes ejecutar
-            <code>fdroid update</code> y volver a subir los archivos generados
-            dentro de la carpeta <code>repo</code>.
-        </div>
     </main>
 
     <footer>
         <p>
             &copy; <span id="anio"></span>
-            Mi Tienda Apps. Repositorio F-Droid.
+            Mi Tienda Apps
         </p>
     </footer>
 
     <script>
-        const URL_REPOSITORIO =
-            "https://jhovas1112.github.io/mi-tienda.apps/repo/";
+        const RUTA_REPOSITORIO = "repo/";
+        const RUTA_INDICE = "repo/index-v1.json";
+
+        const lista = document.getElementById("listaAplicaciones");
+        const contador = document.getElementById(
+            "contadorAplicaciones"
+        );
+        const buscador = document.getElementById("buscador");
+
+        let aplicacionesDisponibles = [];
+
+        function obtenerDireccionRepositorio() {
+            const base = new URL("./", window.location.href);
+            return new URL(RUTA_REPOSITORIO, base).href;
+        }
+
+        document.getElementById(
+            "direccionRepositorio"
+        ).textContent = obtenerDireccionRepositorio();
 
         async function copiarRepositorio() {
+            const direccion = obtenerDireccionRepositorio();
             const mensaje = document.getElementById("mensajeCopia");
 
             try {
-                await navigator.clipboard.writeText(URL_REPOSITORIO);
+                await navigator.clipboard.writeText(direccion);
                 mensaje.textContent =
                     "Dirección copiada correctamente.";
             } catch (error) {
-                copiarConMetodoAlternativo();
+                mensaje.textContent =
+                    "Selecciona y copia la dirección manualmente.";
             }
 
             setTimeout(() => {
@@ -473,31 +486,285 @@
             }, 3500);
         }
 
-        function copiarConMetodoAlternativo() {
-            const mensaje = document.getElementById("mensajeCopia");
-            const campoTemporal = document.createElement("textarea");
-
-            campoTemporal.value = URL_REPOSITORIO;
-            campoTemporal.style.position = "fixed";
-            campoTemporal.style.opacity = "0";
-
-            document.body.appendChild(campoTemporal);
-            campoTemporal.select();
-
-            try {
-                document.execCommand("copy");
-                mensaje.textContent =
-                    "Dirección copiada correctamente.";
-            } catch (error) {
-                mensaje.textContent =
-                    "No se pudo copiar. Selecciona la dirección manualmente.";
+        function obtenerVersionMasReciente(versiones) {
+            if (!Array.isArray(versiones) || versiones.length === 0) {
+                return null;
             }
 
-            document.body.removeChild(campoTemporal);
+            return [...versiones].sort((a, b) => {
+                return Number(b.versionCode || 0) -
+                    Number(a.versionCode || 0);
+            })[0];
         }
+
+        function convertirTamano(bytes) {
+            const cantidad = Number(bytes);
+
+            if (!cantidad) {
+                return "No indicado";
+            }
+
+            if (cantidad < 1024 * 1024) {
+                return `${(cantidad / 1024).toFixed(1)} KB`;
+            }
+
+            return `${(cantidad / 1024 / 1024).toFixed(1)} MB`;
+        }
+
+        function crearIcono(app, nombre) {
+            const contenedor = document.createElement("div");
+
+            if (!app.icon) {
+                contenedor.className = "icono-alternativo";
+                contenedor.textContent =
+                    nombre.charAt(0).toUpperCase();
+                return contenedor;
+            }
+
+            const imagen = document.createElement("img");
+            imagen.className = "icono-aplicacion";
+            imagen.alt = `Icono de ${nombre}`;
+            imagen.src =
+                `${RUTA_REPOSITORIO}icons-640/${app.icon}`;
+
+            imagen.onerror = function () {
+                if (!imagen.dataset.intentoAlternativo) {
+                    imagen.dataset.intentoAlternativo = "true";
+                    imagen.src =
+                        `${RUTA_REPOSITORIO}icons/${app.icon}`;
+                    return;
+                }
+
+                const alternativo = document.createElement("div");
+                alternativo.className = "icono-alternativo";
+                alternativo.textContent =
+                    nombre.charAt(0).toUpperCase();
+
+                imagen.replaceWith(alternativo);
+            };
+
+            return imagen;
+        }
+
+        function crearDato(titulo, valor) {
+            const elemento = document.createElement("div");
+            elemento.className = "dato";
+
+            const etiqueta = document.createElement("strong");
+            etiqueta.textContent = titulo;
+
+            const contenido = document.createElement("span");
+            contenido.textContent = valor;
+
+            elemento.append(etiqueta, contenido);
+
+            return elemento;
+        }
+
+        function crearTarjeta(registro) {
+            const {
+                app,
+                paquete,
+                ultimaVersion
+            } = registro;
+
+            const nombre =
+                app.name ||
+                app.localized?.es_ES?.name ||
+                paquete;
+
+            const resumen =
+                app.summary ||
+                app.localized?.es_ES?.summary ||
+                "Aplicación Android disponible en el repositorio.";
+
+            const tarjeta = document.createElement("article");
+            tarjeta.className = "aplicacion";
+            tarjeta.dataset.busqueda =
+                `${nombre} ${paquete} ${resumen}`.toLowerCase();
+
+            const cabecera = document.createElement("div");
+            cabecera.className = "cabecera-aplicacion";
+
+            const icono = crearIcono(app, nombre);
+
+            const informacion = document.createElement("div");
+
+            const titulo = document.createElement("h3");
+            titulo.className = "nombre-aplicacion";
+            titulo.textContent = nombre;
+
+            const identificador = document.createElement("p");
+            identificador.className = "paquete";
+            identificador.textContent = paquete;
+
+            informacion.append(titulo, identificador);
+            cabecera.append(icono, informacion);
+
+            const descripcion = document.createElement("p");
+            descripcion.className = "resumen";
+            descripcion.textContent = resumen;
+
+            const datos = document.createElement("div");
+            datos.className = "datos";
+
+            datos.append(
+                crearDato(
+                    "Versión",
+                    ultimaVersion?.versionName || "No indicada"
+                ),
+                crearDato(
+                    "Tamaño",
+                    convertirTamano(ultimaVersion?.size)
+                )
+            );
+
+            tarjeta.append(cabecera, descripcion, datos);
+
+            if (ultimaVersion?.apkName) {
+                const enlace = document.createElement("a");
+
+                enlace.className =
+                    "boton boton-principal descargar";
+
+                enlace.textContent = "Descargar APK";
+                enlace.href =
+                    `${RUTA_REPOSITORIO}${ultimaVersion.apkName}`;
+
+                enlace.setAttribute("download", "");
+                tarjeta.appendChild(enlace);
+            }
+
+            return tarjeta;
+        }
+
+        function mostrarAplicaciones(registros) {
+            lista.replaceChildren();
+
+            if (registros.length === 0) {
+                const mensaje = document.createElement("div");
+                mensaje.className = "estado";
+                mensaje.textContent =
+                    "No se encontraron aplicaciones.";
+                lista.appendChild(mensaje);
+                contador.textContent = "0 aplicaciones";
+                return;
+            }
+
+            registros.forEach((registro) => {
+                lista.appendChild(crearTarjeta(registro));
+            });
+
+            contador.textContent =
+                registros.length === 1
+                    ? "1 aplicación disponible"
+                    : `${registros.length} aplicaciones disponibles`;
+        }
+
+        function procesarIndice(indice) {
+            const apps = Array.isArray(indice.apps)
+                ? indice.apps
+                : [];
+
+            const paquetes = indice.packages || {};
+            const mapaApps = new Map();
+
+            apps.forEach((app) => {
+                const id =
+                    app.packageName ||
+                    app.package ||
+                    app.id;
+
+                if (id) {
+                    mapaApps.set(id, app);
+                }
+            });
+
+            const identificadores = new Set([
+                ...mapaApps.keys(),
+                ...Object.keys(paquetes)
+            ]);
+
+            aplicacionesDisponibles =
+                [...identificadores].map((id) => {
+                    return {
+                        paquete: id,
+                        app: mapaApps.get(id) || {
+                            packageName: id,
+                            name: id
+                        },
+                        ultimaVersion:
+                            obtenerVersionMasReciente(
+                                paquetes[id]
+                            )
+                    };
+                });
+
+            mostrarAplicaciones(aplicacionesDisponibles);
+        }
+
+        async function cargarAplicaciones() {
+            try {
+                const respuesta = await fetch(
+                    `${RUTA_INDICE}?t=${Date.now()}`
+                );
+
+                if (!respuesta.ok) {
+                    throw new Error(
+                        `No se encontró ${RUTA_INDICE}`
+                    );
+                }
+
+                const indice = await respuesta.json();
+                procesarIndice(indice);
+            } catch (error) {
+                console.error(error);
+
+                lista.innerHTML = `
+                    <div class="estado">
+                        <strong>No se pudo cargar el catálogo.</strong>
+                        <br><br>
+                        Comprueba que exista el archivo
+                        <code>repo/index-v1.json</code>
+                        en GitHub y que los APK estén dentro de
+                        <code>repo/</code>.
+                    </div>
+                `;
+
+                contador.textContent =
+                    "Catálogo no disponible";
+            }
+        }
+
+        buscador.addEventListener("input", () => {
+            const texto = buscador.value
+                .trim()
+                .toLowerCase();
+
+            const resultados =
+                aplicacionesDisponibles.filter((registro) => {
+                    const app = registro.app;
+
+                    const contenido = [
+                        app.name,
+                        app.summary,
+                        registro.paquete,
+                        registro.ultimaVersion?.versionName
+                    ]
+                        .filter(Boolean)
+                        .join(" ")
+                        .toLowerCase();
+
+                    return contenido.includes(texto);
+                });
+
+            mostrarAplicaciones(resultados);
+        });
 
         document.getElementById("anio").textContent =
             new Date().getFullYear();
+
+        cargarAplicaciones();
     </script>
 
 </body>
